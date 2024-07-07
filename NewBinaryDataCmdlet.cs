@@ -4,7 +4,7 @@ using System.Management.Automation;
 
 namespace PSBinaryHelper
 {
-    [Cmdlet("New", "BinaryData")]
+    [Cmdlet(VerbsCommon.New, "BinaryData")]
     [CmdletBinding(DefaultParameterSetName = "ByChunks")]
     [OutputType(typeof(byte[]))]
     public class NewBinaryDataCmdlet : PSCmdlet

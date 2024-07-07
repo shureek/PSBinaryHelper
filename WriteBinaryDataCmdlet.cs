@@ -7,7 +7,7 @@ using System.Data.SqlTypes;
 
 namespace PSBinaryHelper
 {
-    [Cmdlet("Write", "BinaryData")]
+    [Cmdlet(VerbsCommunications.Write, "BinaryData")]
     public class WriteBinaryDataCmdlet : PSCmdlet
     {
         [Parameter(Mandatory = true)]
