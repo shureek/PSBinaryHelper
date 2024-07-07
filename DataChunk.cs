@@ -6,13 +6,11 @@ using System.Text;
 
 namespace PSBinaryHelper
 {
-    public class DataChunk : ICollection<byte>
+    public class DataChunk
     {
         readonly byte[] data;
 
         public int Count => data.Length;
-
-        public bool IsReadOnly => false;
 
         public DataChunk(byte[] data)
         {
@@ -62,41 +60,6 @@ namespace PSBinaryHelper
         public override int GetHashCode()
         {
             return data.GetHashCode();
-        }
-
-        public void Add(byte item)
-        {
-            throw new NotSupportedException();
-        }
-
-        public void Clear()
-        {
-            throw new NotSupportedException();
-        }
-
-        public bool Contains(byte item)
-        {
-            return data.Contains(item);
-        }
-
-        public void CopyTo(byte[] array, int arrayIndex)
-        {
-            data.CopyTo(array, arrayIndex);
-        }
-
-        public bool Remove(byte item)
-        {
-            throw new NotSupportedException();
-        }
-
-        public IEnumerator<byte> GetEnumerator()
-        {
-            return ((IEnumerable<byte>)data).GetEnumerator();
-        }
-
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            return data.GetEnumerator();
         }
 
         public static implicit operator byte[](DataChunk d) => d.data;
