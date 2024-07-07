@@ -1,0 +1,19 @@
+{
+    "configurations": [
+    {
+        "name": "PowerShell: Binary Module Interactive",
+        "type": "coreclr",
+        "request": "launch",
+        "preLaunchTask": "build",
+        "program": "pwsh",
+        "args": [
+            "-NoExit",
+            "-NoProfile",
+            "-Command",
+            "Import-Module ${workspaceFolder}/bin/Debug/netstandard2.0/PSBinaryHelper.dll"
+        ],
+        "cwd": "${workspaceFolder}",
+        "console": "integratedTerminal"
+    }
+    ]
+}
